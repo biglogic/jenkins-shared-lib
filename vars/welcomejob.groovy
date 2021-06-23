@@ -12,7 +12,12 @@ def call(String name = 'User') {
                                           defaultValue: 'Firstjob-with_shared_lib', 
                                           name: 'jenkins_pipeline_name', 
                                           trim: true
-                                        )
+                                        ),
+                                        string(
+                                          defaultValue: 'first_jenkins_shared',
+                                          name: 'jenkins_lib_name',
+                                          trim: true
+                                       
                                    ])
                                ])
                            } 
@@ -20,7 +25,7 @@ def call(String name = 'User') {
                       }
                       stage('Hello') {
                           steps {
-                               sh " bash ../Firstjob_with_shared_lib@libs/first_jenkins_shared/jenkins-shared.sh"
+                               sh " bash ../$jenkins_pipeline_name@libs/$jenkins_lib_name/jenkins-shared.sh"
            }
        }
   
