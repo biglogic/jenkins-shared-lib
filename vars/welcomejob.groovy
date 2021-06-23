@@ -1,4 +1,4 @@
-def call(String jenkins_pipeline_name,String jenkins_lib_name) {
+def call(String jenkins_pipeline_name='User',String jenkins_lib_name='User') {
                 pipeline {
                   agent any
                    stages {
