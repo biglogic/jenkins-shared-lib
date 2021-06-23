@@ -17,7 +17,7 @@ def call(String name = 'User') {
                                           defaultValue: 'first_jenkins_shared',
                                           name: 'jenkins_lib_name',
                                           trim: true
-                                       
+                                        ) 
                                    ])
                                ])
                            } 
