@@ -9,7 +9,7 @@ def call(String name = 'User') {
                                  properties([
                                      parameters([
                                         string(
-                                          defaultValue: 'Firstjob-with_shared_lib', 
+                                          defaultValue: 'Firstjob_with_shared_lib', 
                                           name: 'jenkins_pipeline_name', 
                                           trim: true
                                         ),
