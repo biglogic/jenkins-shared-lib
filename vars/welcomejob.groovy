@@ -17,12 +17,13 @@ def call(String name = 'User') {
                                ])
                            } 
                        }
+                      }
                       stage('Hello') {
                           steps {
                                sh " bash ../Firstjob_with_shared_lib@libs/first_jenkins_shared/jenkins-shared.sh"
            }
        }
-    }
-}
+  
+   }
 }
 }
