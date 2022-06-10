@@ -4,7 +4,7 @@ def call(String jenkins_pipeline_name, String jenkins_lib_name) {
                    stages {
                       stage('Hello') {
                           steps {
-                               sh "ls -al"
+                               sh "echo $jenkins_pipeline_name"
            }
        }
   
