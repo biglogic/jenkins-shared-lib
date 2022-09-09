@@ -1,0 +1,42 @@
+diff --git a/jenkinsfile b/jenkinsfile
+new file mode 100644
+index 0000000..082e758
+--- /dev/null
++++ b/jenkinsfile
+@@ -0,0 +1,36 @@
++properties([ 
++    parameters([
++        [
++            $class: 'ChoiceParameter', 
++            choiceType: 'PT_SINGLE_SELECT', 
++            description: 'Select a choice', 
++            filterable: false, 
++            name: 'choice1', 
++            randomName: 'choice-parameter-7601235200970', 
++            script: [
++                $class: 'GroovyScript', 
++                fallbackScript: [
++                    classpath: [], 
++                    sandbox: false, 
++                    script: 'return ["ERROR"]'
++                ], 
++                script: [
++                    classpath: [], 
++                    sandbox: false, 
++                    script: ''' import groovy.json.JsonSlurper
++                                try {
++                                    def artifactsUrl = "http://10.0.0.204:8083/connectors/"          
++                                    def artifactsObjectRaw = ["curl", "-s", "-H", "accept: application/json", "-k", "--url", "${artifactsUrl}"].execute().text
++                                    def jsonSlurper = new JsonSlurper()
++                                    def artifactsJsonObject = jsonSlurper.parseText(artifactsObjectRaw)
++                                    def dataArray = artifactsJsonObject
++                                    return dataArray
++                                } catch (Exception e) {
++                                    return [e]
++                                }
++'''
++                ]
++            ]
++        ]
++    ])
++])
