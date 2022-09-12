@@ -1,4 +1,4 @@
 #!/bin/bash
  
-echo "Hello sir"
+echo "Hello"
 
